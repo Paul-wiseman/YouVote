@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/notificationsicon"
+            android:icon="@drawable/ic_baseline_notifications_24"
+            android:title="@string/favorite"
+            android:contentDescription="@string/content_description_favorite"
+            app:showAsAction="ifRoom"
+            android:tint="?attr/colorControlNormal"/>
+
+    <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_search_24dp"
+            android:title="@string/search"
+            android:tint="?attr/colorControlNormal"
+            android:contentDescription="@string/content_description_search"
+            app:showAsAction="ifRoom" />
+
+
+</menu>

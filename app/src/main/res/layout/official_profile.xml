@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#168BC34A"
+        tools:context=".MainActivity">
+
+    <!-- AppBar layout for using Toolbar as AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!-- ToolBar widget -->
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@string/app_name"
+                    app:logo="@drawable/ic_exported_logo_4x"
+                    app:navigationIcon="@drawable/ic_navigation_icon_24"
+                    app:menu="@menu/top_app_bar"
+                    app:titleTextColor="#ffff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- SearchView of the Activity -->
+    <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="75dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/white"
+            android:focusable="true"
+            app:defaultQueryHint="@string/app_name"
+            app:layout_constraintCircleRadius="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:queryHint="@string/searchforhiny"
+            app:searchIcon="@drawable/ic_search_24dp" />
+
+
+    <TextView
+            android:id="@+id/queryTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/profile"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <ImageView
+            android:id="@+id/profile_img"
+            android:layout_width="87dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/queryTxt"
+            tools:src="@drawable/harris"
+            android:layout_marginLeft="16dp" />
+
+    <TextView
+            android:id="@+id/legislativeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/legislatorsname"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/profile_img"
+            app:layout_constraintTop_toBottomOf="@+id/queryTxt" />
+
+    <TextView
+            android:id="@+id/legislativeOffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/LegislativeOffice"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/profile_img"
+            app:layout_constraintTop_toBottomOf="@+id/legislativeName" />
+
+    <TextView
+            android:id="@+id/allyScorePercentage"
+            android:layout_width="43dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/allyScorePer"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintLeft_toRightOf="@id/profile_img"
+            app:layout_constraintTop_toBottomOf="@+id/legislativeOffice" />
+
+    <TextView
+            android:id="@+id/allyScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/allyScore"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toRightOf="@id/profile_img"
+            app:layout_constraintTop_toBottomOf="@+id/allyScorePercentage" />
+
+    <ImageView
+            android:id="@+id/info_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_baseline_info_24"
+            android:backgroundTint="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/allyScorePercentage"
+            app:layout_constraintTop_toBottomOf="@id/legislativeOffice"
+            android:layout_marginTop="12dp" />
+
+    <ImageView
+            android:id="@+id/bookmark_button"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_baseline_bookmark_border_24"
+            android:backgroundTint="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/info_icon"
+            app:layout_constraintTop_toBottomOf="@id/queryTxt"
+            android:layout_marginLeft="132dp"
+            android:layout_marginTop="4dp" />
+
+    <TextView
+            android:id="@+id/profileName"
+            android:layout_width="374dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:gravity="fill"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/profile_img"
+            tools:text="@string/LegislativeOfficeBio"
+            tools:layout_editor_absoluteX="23dp" />
+
+    <TextView
+            android:id="@+id/socialLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/socialLinks"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+    <TextView
+            android:id="@+id/email"
+            android:layout_width="52dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="316dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/socialLinks"
+            app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+    <ImageView
+            android:id="@+id/twitter_icon"
+            android:layout_width="28dp"
+            android:layout_height="39dp"
+            android:background="@drawable/twitter"
+            android:backgroundTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/socialLinks"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" />
+
+    <ImageView
+            android:id="@+id/facebook_icon"
+            android:layout_width="37dp"
+            android:layout_height="38dp"
+            android:background="@drawable/facebook"
+            android:backgroundTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/socialLinks"
+            app:layout_constraintRight_toLeftOf="@id/twitter_icon"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="84dp"
+            android:layout_marginStart="84dp" />
+
+    <ImageView
+            android:id="@+id/instagram_icon"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:background="@drawable/insta"
+            android:backgroundTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/socialLinks"
+            app:layout_constraintLeft_toRightOf="@id/facebook_icon"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="160dp"
+            android:layout_marginStart="160dp" />
+
+    <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="36dp"
+            android:layout_height="40dp"
+            android:background="@drawable/email"
+            android:backgroundTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/email"
+            app:layout_constraintLeft_toRightOf="@id/instagram_icon"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="336dp"
+            android:layout_marginStart="336dp" />
+
+    <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/rating_tv"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/twitter_icon"
+            tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+            android:id="@+id/ratingDesc"
+            android:layout_width="408dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="fill"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/rating"
+            tools:text="@string/ratingDescTv"
+            tools:layout_editor_absoluteX="15dp" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ratingDesc"
+            android:layout_marginTop="16dp"
+            android:numStars="5"
+            android:rating="0"
+            tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+            android:id="@+id/btnSubmitRating"
+            android:backgroundTint="@color/black"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:layout_alignLeft="@+id/ratingBar1"
+            app:layout_constraintTop_toBottomOf="@id/ratingDesc"
+            android:layout_marginTop="8dp"
+            tools:layout_editor_absoluteX="289dp"
+            android:text="START" />
+
+    <TextView
+            android:id="@+id/recentVotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="@string/recentVotesTv"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar1"
+            tools:layout_editor_absoluteX="16dp" />
+
+    <androidx.cardview.widget.CardView
+            style="@style/CardView.Light"
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/recentVotes"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="412dp"
+                android:layout_height="389dp">
+
+            <TextView
+                    android:id="@+id/legislation1"
+                    android:layout_width="157dp"
+                    android:layout_height="52dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:gravity="fill"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    tools:text="@string/legislation1"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                    android:id="@+id/legislation1Desc"
+                    app:layout_constraintTop_toBottomOf="@id/legislation1"
+                    android:layout_width="349dp"
+                    android:layout_height="54dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/legislation1Desc"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="12dp" />
+
+            <Button
+                    android:id="@+id/button_send"
+                    android:layout_width="112dp"
+                    android:layout_height="51dp"
+                    android:text="@string/button_send"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    tools:layout_editor_absoluteY="144dp"
+                    tools:layout_editor_absoluteX="267dp" />
+
+            <TextView
+                    android:id="@+id/how1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/how1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/button_send"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="4dp" />
+
+            <Button
+                    android:id="@+id/yesorno"
+                    android:layout_width="358dp"
+                    android:layout_height="56dp"
+                    android:text="YES"
+                    android:gravity="center"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:layout_constraintTop_toBottomOf="@id/how1"
+                    tools:layout_editor_absoluteX="19dp"
+                    android:layout_marginTop="4dp" />
+
+            <TextView
+                    android:id="@+id/agree1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agree_ornot"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/yesorno"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="4dp" />
+
+            <Button
+                    android:id="@+id/btnsubmitagree1"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="110dp"
+                    android:layout_height="46dp"
+                    app:layout_constraintTop_toBottomOf="@id/agree1"
+                    android:layout_marginTop="12dp"
+                    tools:layout_editor_absoluteX="155dp"
+                    android:text="Respond" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+            style="@style/CardView.Light"
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="412dp"
+                android:layout_height="389dp">
+
+            <TextView
+                    android:id="@+id/legislation2"
+                    android:layout_width="157dp"
+                    android:layout_height="52dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:gravity="fill"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    tools:text="@string/legislation2"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                    android:id="@+id/legislation2Desc"
+                    app:layout_constraintTop_toBottomOf="@id/legislation2"
+                    android:layout_width="349dp"
+                    android:layout_height="54dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/legislation2Desc"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="12dp" />
+
+            <Button
+                    android:id="@+id/button_send2"
+                    android:layout_width="112dp"
+                    android:layout_height="51dp"
+                    android:text="@string/button_send"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    tools:layout_editor_absoluteY="144dp"
+                    tools:layout_editor_absoluteX="267dp" />
+
+            <TextView
+                    android:id="@+id/how2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/how1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/button_send2"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="4dp" />
+
+            <Button
+                    android:id="@+id/yesorno1"
+                    android:layout_width="358dp"
+                    android:layout_height="56dp"
+                    android:text="YES"
+                    android:gravity="center"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:layout_constraintTop_toBottomOf="@id/how2"
+                    tools:layout_editor_absoluteX="19dp"
+                    android:layout_marginTop="4dp" />
+
+            <TextView
+                    android:id="@+id/agree2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agree_ornot"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/yesorno1"
+                    tools:layout_editor_absoluteX="16dp"
+                    android:layout_marginTop="4dp" />
+
+            <Button
+                    android:id="@+id/btnsubmitagree2"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="110dp"
+                    android:layout_height="46dp"
+                    app:layout_constraintTop_toBottomOf="@id/agree2"
+                    android:layout_marginTop="12dp"
+                    tools:layout_editor_absoluteX="155dp"
+                    android:text="Respond" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+            android:id="@+id/button_send3"
+            android:layout_width="164dp"
+            android:layout_height="91dp"
+            app:layout_constraintTop_toBottomOf="@id/cardView2"
+            android:text="@string/button_send"
+            android:gravity="center"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            tools:layout_editor_absoluteX="247dp"
+            android:layout_marginTop="4dp" />
+
+
+</ScrollView>
