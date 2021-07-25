@@ -26,22 +26,22 @@
     <string name="profile">PROFILE</string>
     <string name="legislatorsname">Kamala Harris</string>
     <string name="LegislativeOffice">Senator (D)</string>
-    <string formatted="false" name="allyScorePer">80%</string>
+    <string formatted="false" name="allyScorePer">90%</string>
     <string name="allyScore">Ally Score</string>
-    <string name="LegislativeOfficeBio">Kamala Harris is an American politician and attorney who has served as the junior United States senator from California since 2017. She is the Democratic vice presidential nominee for the 2020 election.</string>
+    <string name="LegislativeOfficeBio">In 2017, Kamala D. Harris was sworn in as a United States Senator for California, the second African-American woman and first South Asian-American senator in history. She serves on the Homeland Security and Governmental Affairs Committee, the Select Committee on Intelligence, the Committee on the Judiciary, and the Committee on the Budget.</string>
     <string name="socialLinks">SOCIAL MEDIA</string>
     <string name="email">EMAIL</string>
-    <string name="rating_tv">RATE KAMALA HARRIS</string>
-    <string name="ratingDescTv">How is Kamala doing as a representative? Begin our rating process. You can update anytime.</string>
+    <string name="rating_tv">RATE THIS OFFICIAL</string>
+    <string name="ratingDescTv">Is Kamala Harris actively supporting Black and traditionally marginalized communities? Give us your rating. You may update anytime.</string>
     <string name="recentVotesTv">RECENT LEGISLATIVE VOTES</string>
     <string name="legislation1">S. 23683</string>
-    <string formatted="false" name="legislation1Desc">Requires small hub airpots to maintain a lactation are for nursing mothers and babys changing table in at least one men\'s and one women\'s</string>
+    <string formatted="false" name="legislation1Desc">Requires small hub airports to maintain a lactation area for nursing mothers and a baby changing table in at least one men's and one women's.</string>
     <string name="button_send">MORE DETAILS</string>
     <string name="agree_ornot">Do you agree or Disagree with Kamala/s Vote</string>
     <string name="agree_ornotupdate">Your response has been recorded for this measure. You said:</string>
     <string name="how1">How kamala harris votes:</string>
     <string name="legislation2">S. 1380</string>
-    <string name="legislation2Desc">Requires a federal judge in criminal proceedings to isssue an order confirming the obligation of the prosecutor to disclose exculpatory evidence.</string>
+    <string formatted="false" name="legislation2Desc">Requires a federal judge in criminal proceedings to issue an order confirming the obligation of the prosecutor to disclose exculpatory evidence.</string>
     <string name="txt_desc">Is Kamala harris actively working to improve black and other marginalized communities in the following areas? your ratings will contribute to the allyscore</string>
     <string name="rat1">Economic Opprtunities</string>
     <string name="rat2">Health Care Access</string>

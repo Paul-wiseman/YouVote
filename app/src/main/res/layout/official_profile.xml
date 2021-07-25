@@ -6,6 +6,10 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
     <!-- AppBar layout for using Toolbar as AppBar -->
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
@@ -111,18 +115,21 @@
             app:layout_constraintLeft_toRightOf="@id/profile_img"
             app:layout_constraintTop_toBottomOf="@+id/legislativeName" />
 
-    <TextView
-            android:id="@+id/allyScorePercentage"
-            android:layout_width="43dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/allyScorePer"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:layout_constraintLeft_toRightOf="@id/profile_img"
-            app:layout_constraintTop_toBottomOf="@+id/legislativeOffice" />
+        <TextView
+                android:id="@+id/allyScorePercentage"
+                android:layout_width="67dp"
+                android:layout_height="42dp"
+                android:background="@drawable/rounded_corner_view"
+                android:gravity="center"
+                android:backgroundTint="#0F7C34"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/allyScorePer"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintLeft_toRightOf="@id/profile_img"
+                app:layout_constraintTop_toBottomOf="@+id/legislativeOffice" />
 
     <TextView
             android:id="@+id/allyScore"
@@ -137,18 +144,18 @@
             app:layout_constraintLeft_toRightOf="@id/profile_img"
             app:layout_constraintTop_toBottomOf="@+id/allyScorePercentage" />
 
-    <ImageView
-            android:id="@+id/info_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/ic_baseline_info_24"
-            android:backgroundTint="@color/black"
-            app:layout_constraintLeft_toRightOf="@id/allyScorePercentage"
-            app:layout_constraintTop_toBottomOf="@id/legislativeOffice"
-            android:layout_marginTop="12dp" />
+        <ImageView
+                android:id="@+id/info_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_baseline_info_24"
+                android:backgroundTint="@color/black"
+                app:layout_constraintLeft_toRightOf="@id/allyScorePercentage"
+                app:layout_constraintTop_toBottomOf="@id/legislativeOffice"
+                android:layout_marginTop="32dp" />
 
-    <ImageView
+        <ImageView
             android:id="@+id/bookmark_button"
             android:layout_width="51dp"
             android:layout_height="60dp"
@@ -161,8 +168,8 @@
 
     <TextView
             android:id="@+id/profileName"
-            android:layout_width="374dp"
-            android:layout_height="62dp"
+            android:layout_width="387dp"
+            android:layout_height="109dp"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif"
             android:gravity="fill"
@@ -170,12 +177,12 @@
             android:textSize="13sp"
             app:layout_constraintTop_toBottomOf="@id/profile_img"
             tools:text="@string/LegislativeOfficeBio"
-            tools:layout_editor_absoluteX="23dp" />
+            tools:layout_editor_absoluteX="10dp" />
 
     <TextView
             android:id="@+id/socialLinks"
-            android:layout_width="197dp"
-            android:layout_height="36dp"
+            android:layout_width="211dp"
+            android:layout_height="47dp"
             android:layout_marginLeft="100dp"
             android:textStyle="bold"
             android:layout_marginTop="28dp"
@@ -222,8 +229,8 @@
             app:layout_constraintRight_toLeftOf="@id/twitter_icon"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="176dp"
-            android:layout_marginStart="176dp" />
+            android:layout_marginLeft="192dp"
+            android:layout_marginStart="192dp" />
 
     <ImageView
             android:id="@+id/instagram_icon"
@@ -233,51 +240,56 @@
             android:backgroundTint="@color/black"
             app:layout_constraintTop_toBottomOf="@id/socialLinks"
             app:layout_constraintLeft_toRightOf="@id/facebook_icon"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="244dp"
-            android:layout_marginStart="244dp" />
+            android:layout_marginLeft="276dp"
+            android:layout_marginStart="276dp" />
 
-    <ImageView
+    <Button
             android:id="@+id/email_icon"
-            android:layout_width="36dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/email"
             android:backgroundTint="@color/black"
             app:layout_constraintTop_toBottomOf="@id/email"
             app:layout_constraintLeft_toRightOf="@id/instagram_icon"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="92dp"
+            android:text="EMAIL THIS OFFICIAL"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="180dp"
-            android:layout_marginStart="180dp" />
+            android:layout_marginLeft="112dp"
+            android:layout_marginStart="112dp" />
 
     <TextView
             android:id="@+id/rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
             android:text="@string/rating_tv"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/twitter_icon"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintTop_toBottomOf="@+id/email_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067" />
 
-    <TextView
-            android:id="@+id/ratingDesc"
-            android:layout_width="408dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif"
-            android:gravity="fill"
-            android:textColor="@color/black"
-            android:textSize="13sp"
-            app:layout_constraintTop_toBottomOf="@id/rating"
-            tools:text="@string/ratingDescTv"
-            tools:layout_editor_absoluteX="15dp" />
+        <TextView
+                android:id="@+id/ratingDesc"
+                android:layout_width="377dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="fill"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/rating"
+                tools:text="@string/ratingDescTv"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp" />
 
-    <androidx.appcompat.widget.AppCompatRatingBar
+        <RatingBar
             android:id="@+id/ratingBar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -511,6 +523,8 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             tools:layout_editor_absoluteX="247dp"
             android:layout_marginTop="4dp" />
+        /
 
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
