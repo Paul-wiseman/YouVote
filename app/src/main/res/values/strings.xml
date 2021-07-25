@@ -54,4 +54,6 @@
     <string name="hyperlink">(Source:<a href="https://wikipedia.com">Library of Congress</a>)</string>
     <string name="kamala_vote">Kamala voted YES on HB 123-45. Do you agree or disagree with that Vote?</string>
     <string name="response">Your respose has been Recorded</string>
+    <string name="descOfWhat">The AllyScore Represents the elected level of support for Black and marginalized communities,</string>
+    <string name="det_text">The Ally Score is calculated based on several data inputs including, but not limited to, voting history, legislation sponsorship, public remarks, and user ratings.</string>
 </resources>
