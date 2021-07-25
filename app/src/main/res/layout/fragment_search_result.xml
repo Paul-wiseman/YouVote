@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#168BC34A"
-        tools:context=".MainActivity">
+        tools:context=".SearchResult">
 
     <!-- AppBar layout for using Toolbar as AppBar -->
     <com.google.android.material.appbar.AppBarLayout
@@ -42,13 +42,13 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- SearchView of the Activity -->
-
     <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="75dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/white"
             android:focusable="true"
@@ -59,27 +59,6 @@
             app:queryHint="@string/searchforhiny"
             app:searchIcon="@drawable/ic_search_24dp" />
 
-    <TextView
-            android:id="@+id/tvsearchtext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:text="Search for officials by name or try searching by your City, State, or Zip Code. "
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchView" />
-
-    <ImageView
-            android:id="@+id/imgView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/image_250"
-            android:scaleType="centerCrop"
-            android:src="@drawable/voterscard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvsearchtext" />
 
     <TextView
             android:id="@+id/queryTxt"
@@ -88,12 +67,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:fontFamily="sans-serif"
-            android:text="@string/top_searches"
+            android:text="@string/topresult"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgView" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchResultsRecView"
@@ -107,5 +86,31 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/queryTxt" />
+
+    <TextView
+            android:id="@+id/relatedquerytect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/relatedquery"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchResultsRecView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/relatedresultsrecview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:paddingBottom="60dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relatedquerytect" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
