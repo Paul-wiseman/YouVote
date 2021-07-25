@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.myapplication.R
 import com.example.myapplication.model.Legislations
 import com.example.myapplication.model.Politicians
+import kotlinx.android.synthetic.main.layout_list_item.view.*
 
 class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val TAG: String = "AppDebug"
@@ -21,9 +23,9 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (holder) {
+        when(holder) {
 
-            is LegislationAdapter.BlogViewHolder -> {
+            is PoliticianViewHolder -> {
                 holder.bind(items.get(position))
             }
 
@@ -34,8 +36,8 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    override fun getItemCount(): Int {
-        return items.size
+    fun submitList(politiciansList: List<Politicians>){
+        items = politiciansList
     }
 
     class PoliticianViewHolder
@@ -43,11 +45,13 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
 
-        val politicians_image = itemView.blog_image
-        val _title = itemView.blog_title
-        val blog_author = itemView.blog_author
+        val politicians_image = itemView.img_item
+        val politicalName = itemView.politicalName
+        val poloiticalpercentageScore = itemView.poloiticalpercentageScore
+        val politicalAllyScire = itemView.politicalAllyScire
+        val politicalPosition = itemView.politicalPosition
 
-        fun bind(blogPost: BlogPost) {
+        fun bind(politicians: Politicians) {
 
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
@@ -55,10 +59,12 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
             Glide.with(itemView.context)
                 .applyDefaultRequestOptions(requestOptions)
-                .load(blogPost.image)
-                .into(blog_image)
-            blog_title.setText(blogPost.title)
-            blog_author.setText(blogPost.username)
+                .load(politicians.image)
+                .into(politicians_image)
+            politicalName.setText(politicians.names)
+            politicalPosition.setText(politicians.position)
+            poloiticalpercentageScore.setText(politicians.percentageScore)
+            politicalAllyScire.setText(politicians.percentageScorePlaceHolder)
 
         }
 
