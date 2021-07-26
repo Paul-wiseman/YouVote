@@ -51,7 +51,7 @@ class OfficialsActivity : AppCompatActivity() {
             customDialog.dismiss()
         }
         cancelButton.setOnClickListener {
-            customDialog.dismiss()
+            customDialog.cancel()
         }
 
     }
