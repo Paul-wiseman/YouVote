@@ -1,13 +1,15 @@
 package com.example.myapplication
 
+import android.app.ProgressDialog.show
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.adapters.LegislationAdapter
 import com.example.myapplication.adapters.PoliticianAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         addDataSet()
     }
 
+
     private fun addDataSet() {
         val data = DataSource.createDataSet()
         politiciansAdapter.submitList(data)
@@ -36,8 +39,14 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             politiciansAdapter = PoliticianAdapter()
             adapter = politiciansAdapter
+
         }
     }
+
+    fun onInfoIcon(view: View) {
+        InfoDialog().show(supportFragmentManager, "InfoAllyScore")
+    }
+
 
 
 }

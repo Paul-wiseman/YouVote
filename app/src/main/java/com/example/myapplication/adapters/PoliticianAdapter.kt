@@ -3,15 +3,16 @@ package com.example.myapplication.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.myapplication.R
-import com.example.myapplication.model.Legislations
 import com.example.myapplication.model.Politicians
 import kotlinx.android.synthetic.main.layout_list_item.view.*
 
-class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
     private val TAG: String = "AppDebug"
 
     private var items: List<Politicians> = ArrayList()
@@ -23,7 +24,7 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder) {
+        when (holder) {
 
             is PoliticianViewHolder -> {
                 holder.bind(items.get(position))
@@ -36,7 +37,7 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(politiciansList: List<Politicians>){
+    fun submitList(politiciansList: List<Politicians>) {
         items = politiciansList
     }
 
@@ -68,5 +69,9 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         }
 
+    }
+
+    override fun getFilter(): Filter {
+        TODO("Not yet implemented")
     }
 }
