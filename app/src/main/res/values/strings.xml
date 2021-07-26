@@ -35,7 +35,7 @@
     <string name="ratingDescTv">Is Kamala Harris actively supporting Black and traditionally marginalized communities? Give us your rating. You may update anytime.</string>
     <string name="recentVotesTv">RECENT LEGISLATIVE VOTES</string>
     <string name="legislation1">S. 23683</string>
-    <string formatted="false" name="legislation1Desc">Requires small hub airports to maintain a lactation area for nursing mothers and a baby changing table in at least one men's and one women's.</string>
+    <string formatted="false" name="legislation1Desc">Requires small hub airports to maintain a lactation area for nursing mothers and a baby changing table in at least one men\'s and one women\'s.</string>
     <string name="button_send">MORE DETAILS</string>
     <string name="agree_ornot">Do you agree or Disagree with Kamala/s Vote</string>
     <string name="agree_ornotupdate">Your response has been recorded for this measure. You said:</string>
