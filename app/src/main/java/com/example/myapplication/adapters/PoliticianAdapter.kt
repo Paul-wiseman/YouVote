@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.myapplication.R
+import com.example.myapplication.model.Legislations
 import com.example.myapplication.model.Politicians
 import kotlinx.android.synthetic.main.layout_list_item.view.*
 
