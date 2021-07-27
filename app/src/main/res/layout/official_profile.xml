@@ -548,10 +548,10 @@
                 android:text="@string/button_send"
                 android:gravity="center"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
-                tools:layout_editor_absoluteX="247dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                app:layout_constraintHorizontal_bias="0.927" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
