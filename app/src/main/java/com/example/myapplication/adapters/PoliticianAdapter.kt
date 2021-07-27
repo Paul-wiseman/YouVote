@@ -1,5 +1,6 @@
 package com.example.myapplication.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,8 @@ import com.example.myapplication.model.Politicians
 import kotlinx.android.synthetic.main.layout_list_item.view.*
 
 class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
-    private val TAG: String = "AppDebug"
+    private val TAG = "RecyclerViewAdapter"
+
 
     private var items: List<Politicians> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -24,14 +26,17 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filte
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        Log.d(TAG, "onBindViewHolder: called.");
         when (holder) {
 
             is PoliticianViewHolder -> {
                 holder.bind(items.get(position))
             }
 
+
         }
     }
+
 
     override fun getItemCount(): Int {
         return items.size
@@ -45,7 +50,6 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filte
     constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
-
         val politicians_image = itemView.img_item
         val politicalName = itemView.politicalName
         val poloiticalpercentageScore = itemView.poloiticalpercentageScore
@@ -68,6 +72,7 @@ class PoliticianAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filte
             politicalAllyScire.setText(politicians.percentageScorePlaceHolder)
 
         }
+
 
     }
 

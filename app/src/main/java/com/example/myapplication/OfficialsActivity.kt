@@ -4,83 +4,28 @@ import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import kotlinx.android.synthetic.main.rating_popup.*
 
 class OfficialsActivity : AppCompatActivity(), RatingBar.OnRatingBarChangeListener {
+    private val TAG = "OfficialsActivity"
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.official_profile)
+        Log.d(TAG, "onCreate: started.");
         val imgbtn = findViewById<ImageButton>(R.id.info_icon)
         val ratingPopOp = findViewById<Button>(R.id.btnSubmitRating)
 
-        ratingPopOp.setOnClickListener{
+        ratingPopOp.setOnClickListener {
             showRatingBar()
         }
         imgbtn.setOnClickListener {
             showCustomAlert()
 
         }
-    }
-
-    private fun rating() {
-        ratingtxt1.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(p0: RatingBar?, p1: Float, p2: Boolean) {
-                val sharedPreference = getSharedPreferences("numStars", Context.MODE_PRIVATE)
-                val editor = sharedPreference.edit()
-                editor.putFloat("numStars", p1)
-                editor.apply()
-                Log.d("rate", ratingtxt1.rating.toString())
-
-            }
-        })
-        ratingtxt2.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(p0: RatingBar?, p1: Float, p2: Boolean) {
-                Toast.makeText(
-                    this@OfficialsActivity,
-                    "Given rating is: $p1",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-            }
-        })
-        ratingtxt3.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(p0: RatingBar?, p1: Float, p2: Boolean) {
-                Toast.makeText(
-                    this@OfficialsActivity,
-                    "Given rating is: $p1",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-            }
-        })
-        ratingtxt4.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(p0: RatingBar?, p1: Float, p2: Boolean) {
-                Toast.makeText(
-                    this@OfficialsActivity,
-                    "Given rating is: $p1",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-
-            }
-        })
-        ratingtxt5.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(p0: RatingBar?, p1: Float, p2: Boolean) {
-                Toast.makeText(
-                    this@OfficialsActivity,
-                    "Given rating is: $p1",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-            }
-        })
-
     }
 
     private fun showCustomAlert() {
@@ -127,8 +72,11 @@ class OfficialsActivity : AppCompatActivity(), RatingBar.OnRatingBarChangeListen
                 val msg4 = rBar4.rating.toString().toFloat()
                 val msg5 = rBar5.rating.toString().toFloat()
 
-                val msg = (msg1 + msg2 + msg3 + msg4 + msg5) / 5
-                rBar.setRating(msg)
+
+
+                val msg = ((msg2 + msg3 + msg4 + msg5) / 5)
+                val msgRating = msg.toFloat()
+                rBar.setRating(msgRating)
             }
         }
 

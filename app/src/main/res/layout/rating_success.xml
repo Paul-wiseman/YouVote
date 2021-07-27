@@ -10,8 +10,11 @@
             android:layout_width="154dp"
             android:layout_height="150dp"
             android:src="@drawable/logo2"
-            tools:layout_editor_absoluteY="162dp"
-            tools:layout_editor_absoluteX="128dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="116dp"
+            app:layout_constraintHorizontal_bias="0.498" />
 
     <ImageView
             android:id="@+id/close2"
@@ -33,16 +36,22 @@
             app:layout_constraintTop_toBottomOf="@+id/logo2"
             android:textColor="@color/black"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="71dp"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="124dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="105dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar" />
 
     <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
             android:rating="4.5"
-            tools:layout_editor_absoluteY="438dp"
-            tools:layout_editor_absoluteX="85dp" />
+            android:id="@+id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/thanksRating" />
 
     <TextView
             android:id="@+id/thanksRating"
@@ -53,8 +62,9 @@
             android:text="@string/thanks_rating"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteY="527dp"
-            tools:layout_editor_absoluteX="35dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
             android:id="@+id/cancelButton"
