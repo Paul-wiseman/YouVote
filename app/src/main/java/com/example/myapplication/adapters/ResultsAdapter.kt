@@ -12,6 +12,8 @@ import com.example.myapplication.tools.DiffUtilClass
 
 class ResultsAdapter(val callback: ResultsListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ResultsViewHolder(
             LayoutInflater.from(parent.context)
@@ -20,11 +22,11 @@ class ResultsAdapter(val callback: ResultsListener) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        Log.d(TAG, "onBindViewHolder: called.");
+//        Log.d(TAG, "onBindViewHolder: called.");
         when (holder) {
 
             is PoliticianAdapter.PoliticianViewHolder -> {
-                holder.bind(items.get(position))
+//                holder.bind(items.get(position))
             }
 
 

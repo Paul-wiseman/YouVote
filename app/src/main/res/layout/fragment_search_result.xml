@@ -42,7 +42,7 @@
 
     <!-- SearchView of the Activity -->
     <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+            android:id="@+id/search_result_activity_search_view"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
@@ -71,10 +71,10 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toBottomOf="@+id/search_result_activity_search_view" />
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchResultsRecView"
+            android:id="@+id/main_activity_searchResultsRecView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -97,7 +97,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchResultsRecView" />
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_searchResultsRecView" />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/relatedresultsrecview"

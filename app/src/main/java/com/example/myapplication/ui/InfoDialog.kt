@@ -1,10 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.myapplication.R
 
 class InfoDialog : DialogFragment() {
     override fun onCreateView(

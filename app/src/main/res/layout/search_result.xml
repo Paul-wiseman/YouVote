@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#168BC34A"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
     <!-- AppBar layout for using Toolbar as AppBar -->
     <com.google.android.material.appbar.AppBarLayout
@@ -41,78 +41,81 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- SearchView of the Activity -->
-    <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+    <AutoCompleteTextView
+            android:id="@+id/search_result_activity_search_view"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginHorizontal="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="75dp"
-            android:background="@drawable/rounded_corner_view"
-            android:backgroundTint="@color/white"
-            android:focusable="true"
-            app:defaultQueryHint="@string/app_name"
-            app:layout_constraintCircleRadius="15dp"
+            android:background="@drawable/search_background"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-            app:queryHint="@string/searchforhiny"
-            app:searchIcon="@drawable/ic_search_24dp" />
-
+            android:drawableStart="@drawable/ic_search_24dp"
+            android:paddingHorizontal="20dp"
+            android:drawableLeft="@drawable/ic_search_24dp"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
             android:id="@+id/queryTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif"
             android:text="@string/topresult"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toBottomOf="@+id/search_result_activity_search_view"
+            app:layout_constraintStart_toStartOf="@+id/search_result_activity_search_view"
+            app:layout_constraintEnd_toEndOf="@+id/search_result_activity_search_view"
+            app:layout_constraintHorizontal_bias="0.003" />
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchResultsRecView"
+            android:id="@+id/main_activity_searchResultsRecView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginHorizontal="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
             android:orientation="vertical"
-            android:paddingBottom="60dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/queryTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/queryTxt"
+            app:layout_constraintEnd_toEndOf="@+id/search_result_activity_search_view"
+
+            app:layout_constraintStart_toStartOf="@+id/search_result_activity_search_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.041" />
 
     <TextView
             android:id="@+id/relatedquerytect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif"
             android:text="@string/relatedquery"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchResultsRecView" />
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_searchResultsRecView"
+            app:layout_constraintEnd_toEndOf="@+id/main_activity_searchResultsRecView"
+            app:layout_constraintStart_toStartOf="@+id/main_activity_searchResultsRecView"
+            app:layout_constraintHorizontal_bias="0.0"
+             />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/relatedresultsrecview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="15dp"
             android:orientation="vertical"
-            android:paddingBottom="60dp"
+            android:layout_marginVertical="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relatedquerytect" />
-
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_activity_searchResultsRecView"
+            app:layout_constraintEnd_toEndOf="@+id/main_activity_searchResultsRecView"
+            app:layout_constraintTop_toBottomOf="@+id/relatedquerytect"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

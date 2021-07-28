@@ -5,10 +5,10 @@
         android:id="@+id/idNestedSV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -47,21 +47,23 @@
 
         <!-- SearchView of the Activity -->
 
-        <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
+        <AutoCompleteTextView
+                android:id="@+id/main_activity_searchView"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_corner_view"
-                android:backgroundTint="@color/white"
+                android:background="@drawable/search_background"
+                android:drawableStart="@drawable/ic_search_24dp"
+                android:paddingHorizontal="20dp"
+                android:drawableLeft="@drawable/ic_search_24dp"
                 android:focusable="true"
-                app:defaultQueryHint="@string/app_name"
                 app:layout_constraintCircleRadius="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/appBarLayout"
                 app:queryHint="@string/searchforhiny"
                 app:searchIcon="@drawable/ic_search_24dp" />
+
 
         <TextView
                 android:id="@+id/tvsearchtext"
@@ -73,7 +75,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/searchView" />
+                app:layout_constraintTop_toBottomOf="@id/main_activity_searchView" />
 
         <ImageView
                 android:id="@+id/imgView"
@@ -83,7 +85,8 @@
                 android:src="@drawable/voterscard"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvsearchtext" />
+                app:layout_constraintTop_toBottomOf="@+id/tvsearchtext"
+                app:layout_constraintHorizontal_bias="0.0" />
 
         <TextView
                 android:id="@+id/queryTxt"
@@ -100,17 +103,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/imgView" />
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/searchResultsRecView"
+                android:id="@+id/main_activity_searchResultsRecView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical"
                 android:paddingBottom="60dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/queryTxt" />
+                app:layout_constraintTop_toBottomOf="@+id/queryTxt"
+                app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
